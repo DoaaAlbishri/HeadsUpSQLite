@@ -94,6 +94,7 @@ class MainActivity : AppCompatActivity() {
             gameStarted = true
             tvMain.text = "Please Rotate Device"
             btStart.isVisible = false
+            btAdd.isVisible = false
             val rotation = windowManager.defaultDisplay.rotation
             if(rotation == Surface.ROTATION_0 || rotation == Surface.ROTATION_180){
                 updateInterface(false)
@@ -111,6 +112,7 @@ class MainActivity : AppCompatActivity() {
                     tvTime.text = "Time: --"
                     tvMain.text = "Heads Up!"
                     btStart.isVisible = true
+                    btAdd.isVisible = true
                     updateInterface(false)
                 }
             }.start()
