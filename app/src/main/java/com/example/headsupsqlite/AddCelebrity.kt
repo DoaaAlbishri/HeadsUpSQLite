@@ -29,12 +29,18 @@ class AddCelebrity : AppCompatActivity() {
         val taboo3 = findViewById<View>(R.id.edTaboo3) as EditText
         val btAdd = findViewById<Button>(R.id.btAddCel)
         val btBack = findViewById<Button>(R.id.btBack)
+        val btchange = findViewById<Button>(R.id.btchange)
         tvCeleb = findViewById<TextView>(R.id.tvCeleb)
 
         re()
 
         btBack.setOnClickListener {
             intent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        btchange.setOnClickListener {
+            intent = Intent(applicationContext, EditAndDelete::class.java)
             startActivity(intent)
         }
 

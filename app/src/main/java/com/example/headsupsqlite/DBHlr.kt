@@ -44,4 +44,19 @@ class DBHlr(context: Context? ) : SQLiteOpenHelper(context, "details.db", null, 
         }
         return list
     }
+    fun update(s1:String,s2:String,s3:String,s4:String, new1 :String , new2 :String,new3 :String,new4: String){
+        val cv = ContentValues()
+        cv.put("name", new1)
+        cv.put("taboo1", new2)
+        cv.put("taboo2", new3)
+        cv.put("taboo3", new4)
+        sql.update("celebrity",  cv, "name=?", arrayOf(s1))
+        sql.update("celebrity",  cv, "taboo1=?", arrayOf(s2))
+        sql.update("celebrity",  cv, "taboo2=?", arrayOf(s3))
+        sql.update("celebrity",  cv, "taboo3=?", arrayOf(s4))
+    }
+
+    fun delete(s1 :String){
+        sql.delete("celebrity", "name=?", arrayOf(s1))
+    }
 }
